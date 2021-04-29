@@ -13,6 +13,10 @@ use App\Http\Controllers\Api\ProductController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+//GET
 Route::get('/products', [ProductController::class, 'showProducts']);
 Route::get('/products/{id}', [ProductController::class, 'showProduct']);
+
+
+//POST
+Route::post('/products', [ProductController::class, 'storeProducts']);
