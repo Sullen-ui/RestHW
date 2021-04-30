@@ -65,4 +65,28 @@ class ProductController extends Controller
             "article" => $product
        ])->setStatusCode(201,"Product is store");
     }
+
+    public function deleteProduct($id)
+    {
+        $product = Product::find($id);
+        if(!$product){
+            return response()->json([
+                "status" => false,
+                "message" => "Product Not Found"
+            ])-> setStatusCode(404, 'Nichego net' ); 
+
+            }
+
+         $product->delete();   
+         
+         return response()->json([
+            "status" => true,
+            "message" => "Product is deleted"
+        ])-> setStatusCode(200, 'oki' ); 
+
+      
+        
+        
+         
+    }
 }

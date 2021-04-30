@@ -20,3 +20,6 @@ Route::get('/products/{id}', [ProductController::class, 'showProduct']);
 
 //POST
 Route::post('/products', [ProductController::class, 'storeProducts']);
+
+//DELETE
+Route::delete('/products/{id}', [ProductController::class, 'deleteProduct']);
